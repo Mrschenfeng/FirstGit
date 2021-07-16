@@ -23,7 +23,7 @@
           </el-radio-group>-->
           <!--<el-scrollbar style="width: 100%;height: 100%">-->
             <div>
-              <el-menu default-active="/home" router unique-opened  background-color="#D5FFF3">
+              <el-menu default-active="/home"  router unique-opened  background-color="#D5FFF3">
                 <el-menu-item index="/home">
                   <i class="el-icon-position"></i>
                   <span slot="title">首页</span>
@@ -34,10 +34,10 @@
                     <span slot="title">用户管理</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="2-1">用户</el-menu-item>
+                    <el-menu-item index="/user">用户管理</el-menu-item>
                   </el-menu-item-group>
                   <el-menu-item-group>
-                    <el-menu-item index="2-2">权限</el-menu-item>
+                    <el-menu-item index="2-2">权限管理</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
               </el-menu>
@@ -65,10 +65,9 @@ export default {
     name: "Home",
     data() {
       return {
-        isCollapse: false,
         user: {
           name: "admin",
-          circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+          circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
         },    //用户信息
       }
     },
@@ -88,9 +87,11 @@ export default {
             this.$message.info('已取消操作');
           });
         }else{
-          this.$router.replace('/info');
+          if(this.$router.currentRoute.Path !== '/info'){
+            this.$router.replace('/info');
+          }
         }
-      },
+      }
     },
 
 }

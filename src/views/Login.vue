@@ -127,7 +127,7 @@ export default {
       }else{
         this.$message.error("请查看错误信息！");
       }
-      /*let url = http + "";
+      /* let url = http + "";
       let param = {username : this.reg_username};
       let res = get(url,param);
       if (res.code !== 200){
@@ -135,7 +135,7 @@ export default {
       }else{
           url = http + "",
           param = {"username":this.reg_username,"password":this.reg_password};
-      }*/
+      } */
     },
     judge_password(){
       this.confirm();
